@@ -1,6 +1,7 @@
 import { Controller, Get, Post, Logger, Body } from '@nestjs/common';
 import { AppService } from './app.service';
 import { MathService } from './math.service';
+import { MessagePattern } from '@nestjs/microservices';
 
 @Controller()
 export class AppController {
@@ -18,8 +19,11 @@ export class AppController {
     return this.appService.getHello();
   }
 
-  @Post('add')
-  async accumulate(@Body('data') data: number[]) {
+  // Change to microservices
+  // @Post('add')
+  @MessagePattern('add')
+  // async accumulate(@Body('data') data: number[]) {
+  async accumulate(data: number[]) {
     this.logger.log('Adding ' + data.toString());
     return this.mathService.accumulate(data);
   }

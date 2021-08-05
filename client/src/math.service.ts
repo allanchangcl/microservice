@@ -1,8 +1,26 @@
 import { Injectable } from '@nestjs/common';
+import {
+  ClientProxyFactory,
+  Transport,
+  ClientProxy,
+} from '@nestjs/microservices';
 
 @Injectable()
 export class MathService {
-  public accumulate(data: number[]): number {
-    return (data || []).reduce((a, b) => Number(a) + Number(b), 0);
+  private client: ClientProxy;
+
+  constructor() {
+    this.client = ClientProxyFactory.create({
+      transport: Transport.TCP,
+      options: {
+        host: '127.0.0.1',
+        port: 8877,
+      },
+    });
+  }
+
+  public accumulate(data: number[]) {
+    // return (data || []).reduce((a, b) => Number(a) + Number(b), 0);
+    return this.client.send<number, number[]>('add', data);
   }
 }
