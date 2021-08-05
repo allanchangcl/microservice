@@ -60,20 +60,20 @@ $ yarn run test:cov
 
 Follow monolith or microservices steps to curl
 
-# monolith
+## monolith
 cd monolith
-# start monolith server
+## start monolith server
 yarn start
 
 Run curl -> Test Server Post Request
 
-# microservices
-# start microservice server
+## microservices
+## start microservice server
 cd micro
 
 yarn start
 
-# start client server
+## start client server
 cd client
 
 yarn start
@@ -81,8 +81,8 @@ yarn start
 Run curl -> Test Server Post Request
 
 
-# Test Server Post Request
-# JSON
+## Test Server Post Request
+### JSON
 $ curl --header "Content-Type: application/json" --request POST --data '{"data": [1,2,3,4,5,6,7,8,9]}' http://localhost:3000/add
-# Form Data
+### Form Data
 $ curl --header "Content-Type: application/x-www-form-urlencoded" --request POST --data "data[0]=1&data[1]=2&data[3]=100" http://localhost:3000/add
