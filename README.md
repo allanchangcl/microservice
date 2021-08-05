@@ -29,37 +29,59 @@
 ## Installation
 
 ```bash
-$ npm install
+$ yarn install
 ```
 
 ## Running the app
 
 ```bash
 # development
-$ npm run start
+$ yarn run start
 
 # watch mode
-$ npm run start:dev
+$ yarn run start:dev
 
 # production mode
-$ npm run start:prod
+$ yarn run start:prod
 ```
 
 ## Test
 
 ```bash
 # unit tests
-$ npm run test
+$ yarn run test
 
 # e2e tests
-$ npm run test:e2e
+$ yarn run test:e2e
 
 # test coverage
-$ npm run test:cov
+$ yarn run test:cov
 ```
 
-# branch http
+Follow monolith or microservices steps to curl
+
+# monolith
+cd monolith
+# start monolith server
 yarn start
+
+Run curl -> Test Server Post Request
+
+# microservices
+cd micro
+
+# start microservice server
+yarn start
+
+cd client
+
+# start client server
+yarn start
+
+Run curl -> Test Server Post Request
+
+
+# Test Server Post Request
 # JSON
 $ curl --header "Content-Type: application/json" --request POST --data '{"data": [1,2,3,4,5,6,7,8,9]}' http://localhost:3000/add
 # Form Data
