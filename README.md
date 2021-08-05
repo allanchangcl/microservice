@@ -61,25 +61,32 @@ $ yarn run test:cov
 Follow monolith or microservices steps to curl
 
 ## monolith
+```bash
 cd monolith
+```
 ## start monolith server
+```bash
 yarn start
+```
 
 Run curl -> Test Server Post Request
 
 ## microservices
 ## start microservice server
+```bash
 cd micro
 
 yarn start
+```
 
 ## start client server
+```bash
 cd client
 
 yarn start
 
 Run curl -> Test Server Post Request
-
+```
 
 ## Test Server Post Request
 ### JSON
