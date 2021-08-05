@@ -70,10 +70,12 @@ Run curl -> Test Server Post Request
 # microservices
 # start microservice server
 cd micro
+
 yarn start
 
 # start client server
 cd client
+
 yarn start
 
 Run curl -> Test Server Post Request
